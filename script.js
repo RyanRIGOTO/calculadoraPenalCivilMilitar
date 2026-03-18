@@ -155,12 +155,14 @@ function atualizarResumo() {
 
 function calcularPenaReduzida(totalServicos) {
   let redutores = 0;
-  if (el.advogado.checked) {
-    if (el.reuPrimario.checked) redutores += 1;
-    if (el.colaboracao.checked) redutores += 1;
-  }
-  redutores = Math.min(redutores, 2);
+
+  if (el.reuPrimario.checked) redutores += 1;
+  if (el.colaboracao.checked) redutores += 1;
+  if (el.advogado.checked) redutores += 1;
+
+  redutores = Math.min(redutores, 3);
   const fator = redutores * (1 / 6);
+
   return Math.max(0, Math.round(totalServicos * (1 - fator)));
 }
 
