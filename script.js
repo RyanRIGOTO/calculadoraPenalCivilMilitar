@@ -116,6 +116,24 @@ function obterItensSelecionados() {
   );
 }
 
+/* Caso queira restrengir o uso do advogado de fato descomente isso e comente o outro a baixo
+function calcularPenaReduzida(totalServicos) {
+  if (!el.advogado.checked) {
+    return totalServicos;
+  }
+
+  let redutores = 0;
+  if (el.advogado.checked) redutores += 1;
+  if (el.reuPrimario.checked) redutores += 1;
+  if (el.colaboracao.checked) redutores += 1;
+
+  const fracaoReducao = redutores * (1 / 6);
+  const penaFinal = totalServicos * (1 - fracaoReducao);
+
+  return Math.max(0, Math.round(penaFinal));
+}
+*/
+
 function calcularPenaReduzida(totalServicos) {
   let redutores = 0;
 
