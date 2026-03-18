@@ -122,3 +122,36 @@ textarea{
   .main-grid{grid-template-columns:1fr}
   .sidebar{position:static}
 }
+.lista-artigos {
+  display: grid;
+  gap: 14px;
+}
+
+.categoria {
+  border: 1px solid #334155;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(31, 41, 55, 0.75);
+}
+
+.categoria-titulo {
+  margin: 0;
+  padding: 12px 14px;
+  background: rgba(245, 158, 11, 0.12);
+  border-bottom: 1px solid #334155;
+  font-size: 1rem;
+}
+
+.item-artigo {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-top: 1px solid rgba(51, 65, 85, 0.6);
+}
+
+.item-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
