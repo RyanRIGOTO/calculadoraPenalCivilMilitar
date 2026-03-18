@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Penal - Clone fiel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div>
+        <h1>Calculadora Penal</h1>
+        <p>Clone fiel inspirado na estrutura pública da Calculadora Penal - ABCD.</p>
+      </div>
+      <button id="btnLimpar" class="btn btn-secundario" type="button">Limpar</button>
+    </header>
+
+    <section class="main-grid">
+      <aside class="sidebar card">
+        <div class="field-group">
+          <label for="nome">Informe o nome do detento:</label>
+          <input id="nome" type="text" placeholder="Nome completo" />
+        </div>
+
+        <div class="field-group">
+          <label for="cpf">Informe o CPF do detento:</label>
+          <input id="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00" />
+        </div>
+
+        <div class="field-group">
+          <label for="busca">Buscar artigo:</label>
+          <input id="busca" type="text" placeholder="Ex.: 157, ameaça, desacato..." />
+        </div>
+
+        <div class="totais">
+          <div><span>Artigos:</span><strong id="totalArtigos">0</strong></div>
+          <div><span>Serviços:</span><strong id="totalServicos">0</strong></div>
+          <div><span>Multa:</span><strong id="totalMulta">R$ 0,00</strong></div>
+          <div><span>Fiança:</span><strong id="totalFianca">R$ 0,00</strong></div>
+        </div>
+
+        <div class="redutores">
+          <label class="checkbox"><input type="checkbox" id="reuPrimario"> RÉU PRIMÁRIO</label>
+          <label class="checkbox"><input type="checkbox" id="colaboracao"> COLABORAÇÃO</label>
+          <label class="checkbox"><input type="checkbox" id="advogado"> ADVOGADO</label>
+          <small>Toda e qualquer redução de pena somente deve ser aplicada na presença de um advogado.</small>
+        </div>
+
+        <div class="resumo-pena card interno">
+          <span>Pena base</span>
+          <strong id="penaBase">0 meses</strong>
+          <span>Pena reduzida</span>
+          <strong id="penaReduzida">0 meses</strong>
+        </div>
+
+        <section class="obs card interno obs-sidebar">
+          <h3>Observações</h3>
+          <ol>
+            <li>Inclua todos os artigos antes de selecionar as reduções.</li>
+            <li>Toda e qualquer redução de pena somente deve ser aplicada na presença de um advogado.</li>
+          </ol>
+        </section>
+      </aside>
+
+      <main class="content-center">
+        <section class="card artigos-card">
+          <div class="section-header">
+            <h2>Infrações e crimes</h2>
+            <span class="badge">Selecione os artigos</span>
+          </div>
+          <div id="listaArtigos" class="lista-artigos"></div>
+        </section>
+      </main>
+
+      <aside class="content-right">
+        <section class="actions card">
+          <button id="btnPrisao" class="btn" type="button">PRISÃO</button>
+          <button id="btnPenaParcial" class="btn" type="button">PENA PARCIAL</button>
+          <button id="btnLiberdade" class="btn" type="button">LIBERDADE</button>
+          <button id="btnMultar" class="btn" type="button">MULTAR</button>
+        </section>
+
+        <section class="resultado card">
+          <div class="resultado-header">
+            <h2>Resultado</h2>
+            <button id="btnCopiar" class="btn btn-secundario" type="button">Copiar</button>
+          </div>
+          <textarea id="resultado" rows="14" placeholder="O resultado gerado aparecerá aqui."></textarea>
+        </section>
+
+        <section class="cards-resultado">
+          <article class="card-preview card">
+            <h3>PRISÃO</h3>
+            <p>Indivíduo será encaminhado à prisão para cumprir sua pena.</p>
+          </article>
+          <article class="card-preview card">
+            <h3>PENA PARCIAL</h3>
+            <p>Indivíduo encaminhado à prisão porém com redução da pena devido pagamento das penas afiançáveis.</p>
+          </article>
+          <article class="card-preview card">
+            <h3>LIBERDADE</h3>
+            <p>Indivíduo segue em liberdade por pagamento total da fiança.</p>
+          </article>
+          <article class="card-preview card">
+            <h3>MULTAR</h3>
+            <p>Indivíduo será autuado de acordo com suas infrações.</p>
+          </article>
+        </section>
+      </aside>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
