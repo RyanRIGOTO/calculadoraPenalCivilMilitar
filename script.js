@@ -117,14 +117,11 @@ function obterItensSelecionados() {
 }
 
 function calcularPenaReduzida(totalServicos) {
-  if (!el.advogado.checked) {
-    return totalServicos;
-  }
-
   let redutores = 0;
-  if (el.advogado.checked) redutores += 1;
+
   if (el.reuPrimario.checked) redutores += 1;
   if (el.colaboracao.checked) redutores += 1;
+  if (el.advogado.checked) redutores += 1;
 
   const fracaoReducao = redutores * (1 / 6);
   const penaFinal = totalServicos * (1 - fracaoReducao);
