@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Penal - Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Clone inspirado na Calculadora Penal ABCD</p>
+        <h1>Calculadora Penal</h1>
+        <p class="subtitle">Versão estática para GitHub Pages, com HTML, CSS e JavaScript puros.</p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="catalogo">
+        <section>
+          <h2>Infrações leves</h2>
+          <div id="lista-leves" class="lista-crimes"></div>
+        </section>
+        <section>
+          <h2>Crimes médios</h2>
+          <div id="lista-medios" class="lista-crimes"></div>
+        </section>
+        <section>
+          <h2>Crimes graves</h2>
+          <div id="lista-graves" class="lista-crimes"></div>
+        </section>
+        <section>
+          <h2>Crimes gravíssimos</h2>
+          <div id="lista-gravissimos" class="lista-crimes"></div>
+        </section>
+      </aside>
+
+      <section class="painel">
+        <div class="card form-card">
+          <h2>Cadastro do detento</h2>
+          <div class="grid-2">
+            <label>
+              Nome
+              <input id="nome" type="text" placeholder="Informe o nome do detento" />
+            </label>
+            <label>
+              CPF
+              <input id="cpf" type="text" placeholder="Informe o CPF do detento" />
+            </label>
+          </div>
+
+          <label>
+            Buscar artigo
+            <input id="busca" type="text" placeholder="Ex.: 157, ameaça, furto..." />
+          </label>
+
+          <div class="acoes-principais">
+            <button id="btn-adicionar-selecionados" class="btn btn-primary">Adicionar selecionados</button>
+            <button id="btn-limpar" class="btn btn-secondary">Limpar</button>
+          </div>
+        </div>
+
+        <div class="card resumo-card">
+          <h2>Resumo</h2>
+          <div class="resumo-grid">
+            <div>
+              <span>Artigos</span>
+              <div id="artigosSelecionados" class="box-lista"></div>
+            </div>
+            <div>
+              <span>Serviços</span>
+              <strong id="totalServicos">0 meses</strong>
+            </div>
+            <div>
+              <span>Multa</span>
+              <strong id="totalMulta">R$ 0,00</strong>
+            </div>
+            <div>
+              <span>Fiança</span>
+              <strong id="totalFianca">R$ 0,00</strong>
+            </div>
+          </div>
+
+          <div class="reducoes">
+            <label><input type="checkbox" id="reuPrimario" /> Réu primário</label>
+            <label><input type="checkbox" id="colaboracao" /> Colaboração</label>
+            <label><input type="checkbox" id="advogado" /> Advogado</label>
+          </div>
+
+          <p class="nota">Nesta versão, as reduções só são aplicadas quando <strong>Advogado</strong> estiver marcado. Regra implementada: cada redutor válido reduz 1/6 da pena total, limitado a 1/3.</p>
+
+          <div class="acoes-resultados">
+            <button data-resultado="prisao" class="btn btn-primary">Prisão</button>
+            <button data-resultado="pena_parcial" class="btn btn-secondary">Pena parcial</button>
+            <button data-resultado="liberdade" class="btn btn-secondary">Liberdade</button>
+            <button data-resultado="multar" class="btn btn-secondary">Multar</button>
+          </div>
+        </div>
+
+        <div id="saida" class="card saida hidden">
+          <div class="saida-topo">
+            <div>
+              <h2 id="saidaTitulo">Resultado</h2>
+              <p id="saidaDescricao"></p>
+            </div>
+            <button id="btn-copiar" class="btn btn-primary">Copiar</button>
+          </div>
+          <pre id="textoResultado"></pre>
+        </div>
+
+        <div class="card observacoes">
+          <h2>Observações</h2>
+          <ol>
+            <li>Inclua todos os artigos antes de selecionar as reduções.</li>
+            <li>Toda redução aplicada nesta versão exige a presença de advogado.</li>
+            <li>Este clone foi refeito do zero com base na estrutura pública observável da página original.</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
